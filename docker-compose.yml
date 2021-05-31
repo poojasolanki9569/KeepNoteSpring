@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+    mysqldb:
+        image: mysql:latest
+        container_name: mysql_container
+        environment: 
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: keepnotestep5
+    
+    mongodb:
+        image: mongo:latest
+        container_name: mongodb_container
+
+    userauthenticationservice:
+        image: poojasolanki/userauthenticationservice:v1
+        container_name: userauthenticationservice
+        ports:
+            - 8089:8089
+        environment:
+            MYSQL_URL: jdbc:mysql://mysqldb:3306/keepnotestep5
+            MYSQL_USERNAME: root
+            MYSQL_PASSWORD: password
+        depends_on:
+            - mysqldb
+        restart: always
+
+    userservice:
+        image: poojasolanki/userservice:v1
+        container_name: userservice
+        ports:
+            - 9090:9090
+        environment:
+           MONGO_URI: mongodb://mongodb:27017/keepNoteStep5
+        depends_on:
+            - mongodb
+        restart: always
+        
+    reminderservice:
+        image: poojasolanki/reminderservice:v1
+        container_name: reminderservice
+        ports:
+            - 9091:9091
+        environment:
+           MONGO_URI: mongodb://mongodb:27017/keepNoteStep5
+        depends_on:
+            - mongodb
+        restart: always
+        
+    noteservice:
+        image: poojasolanki/noteservice:v1
+        container_name: noteservice
+        ports:
+            - 9092:9092
+        environment:
+           MONGO_URI: mongodb://mongodb:27017/keepNoteStep5
+        depends_on:
+            - mongodb
+        restart: always
+        
+    categoryservice:
+        image: poojasolanki/categoryservice:v1
+        container_name: categoryservice
+        ports:
+            - 9093:9093
+        environment:
+           MONGO_URI: mongodb://mongodb:27017/keepNoteStep5
+        depends_on:
+            - mongodb
+        restart: always
