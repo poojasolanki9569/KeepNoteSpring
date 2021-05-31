@@ -1,6 +1,6 @@
-## Seed code - Boilerplate for step 5 - Keep Note Assignment
+## Seed code - Boilerplate for step 5 - Keep Note Project
 
-### Assignment Step Description
+### Project Step Description
 
 In this case study Keep Note Step 5, we will implement JWT (JSON Web Token) authentication on top of Keep Note Step 4 Assignment. JSON Web Token (JWT) is an open standard (RFC 7519) that
 defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is
@@ -89,22 +89,3 @@ The folders and files you see in this repositories, is how it is expected to be 
      `git push -u origin master`
 
 8. Check on the git repo online, if the files have been pushed
-
-### Important instructions for Participants
-> - We expect you to write the assignment on your own by following through the guidelines, learning plan, and the practice exercises
-> - The code must not be plagirized, the mentors will randomly pick the submissions and may ask you to explain the solution
-> - The code must be properly indented, code structure maintained as per the boilerplate and properly commented
-> - Follow through the problem statement shared with you
-
-### MENTORS TO BEGIN REVIEW YOUR WORK ONLY AFTER ->
-> - You add the respective Mentor as a Reporter/Master into your Assignment Repository
-> - You have checked your Assignment on the Automated Evaluation Tool - Hobbes (Check for necessary steps in your Boilerplate - README.md file. ) and got the required score - Check with your mentor about the Score you must achieve before it is accepted for Manual Submission.
-> - Intimate your Mentor on Slack and/or Send an Email to learner.support@stackroute.in - with your Git URL - Once you done working and is ready for final submission.
-
-
-### Further Instructions on Release
-
-*** Release 0.1.0 ***
-
-- Right click on the Assignment select Run As -> spring boot app to run your Assignment.
-- Right click on the Assignment select Run As -> JUnit Test to run your Assignment.
